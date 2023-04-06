@@ -4,7 +4,7 @@ export default function Header(){
     return (
         <header className={styles.header}>
             
-            <div className={styles.pageName}>Page</div>
+            <div className={styles.pageName}>POS</div>
             <div></div>
         </header>
     )

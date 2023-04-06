@@ -14,9 +14,18 @@ export default function Navbar(){
                     receipt_long
                 </span>
             </div>
-            <div className={styles.user}>
-
+            <div className={styles.navbarBottom}>
+                <div className={styles.customerService}>
+                    <span class="material-symbols-outlined">
+                        headset_mic
+                    </span>
+                </div>
+                <div className={styles.userProfile}>
+                    <div className={styles.user}>
+                    </div>
+                </div>
             </div>
+            
            
         </div>
     )
