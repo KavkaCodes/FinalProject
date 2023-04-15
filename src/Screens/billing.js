@@ -1,5 +1,6 @@
 import styles from '@/styles/Home.module.css'
 import Tables from "../components/tables";
+import ActiveButton from '@/components/Buttons/activeButton';
 
 export default function Billing(){
     return (
@@ -23,6 +24,8 @@ export default function Billing(){
                             </div>
                         </div>
                         <div className={styles.billItems}>
+                            
+
                             <div className={styles.billItem}>
                                 <div className={styles.billItemField}>
                                     Butter Chicken
@@ -83,7 +86,7 @@ export default function Billing(){
                     </div>
                 </div>
                 <div className={styles.cta}>
-
+                    <ActiveButton></ActiveButton>
                 </div>
             </div>
         </div>

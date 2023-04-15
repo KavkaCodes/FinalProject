@@ -1,5 +1,8 @@
 import styles from '@/styles/Home.module.css'
 import Tables from "../components/tables";
+import categories from "../data/categories";
+import menu from "../data/menu"
+
 export default function Pos(){
     return (
         <div className={styles.pos}>
@@ -12,24 +15,13 @@ export default function Pos(){
                             <div className={styles.category}>
                                 All
                             </div>
-                            <div className={styles.category}>
-                                Pizza
-                            </div>
-                            <div className={styles.category}>
-                                Pasta
-                            </div>
-                            <div className={styles.category}>
-                                Mughlai
-                            </div>
-                            <div className={styles.category}>
-                                Soup
-                            </div>
-                            <div className={styles.category}>
-                                Burger
-                            </div>
-                            <div className={styles.category}>
-                                Indian
-                            </div>
+                            {
+                                categories.map(
+                                    (category) => (
+                                        <div className={styles.category}>{category}</div>
+                                    )
+                                )
+                            }
                         </div>
                         <div className={styles.menu}>
                             <div className={styles.searchBar}>
@@ -50,103 +42,21 @@ export default function Pos(){
                                     </div>
                                 </div>
                                 <div className={styles.menuItems}>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
-                                    <div className={styles.menuItem}>
-                                        <div className={styles.menuItemField}>
-                                            Butter Chicken
-                                        </div>
-                                        <div className={styles.menuItemField}>
-                                            11.20
-                                        </div>
-                                    </div>
 
+                                {
+                                    menu.map(
+                                        (item) => ( 
+                                            <div className={styles.menuItem}>
+                                                <div className={styles.menuItemField}>
+                                                    {item.fs_menu_itemName}
+                                                </div>
+                                                <div className={styles.menuItemField}>
+                                                    {item.fs_menu_itemRate}
+                                                </div>
+                                            </div>
+                                        )
+                                    )
+                                }
                                 </div>
                             </div>
                         </div>

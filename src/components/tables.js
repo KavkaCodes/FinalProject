@@ -1,4 +1,5 @@
 import styles from '@/styles/Home.module.css'
+import tables from "../data/tables";
 
 export default function Tables(){
     return (
@@ -14,12 +15,13 @@ export default function Tables(){
                     </div>
                 </div>
                 <div className={styles.tablesList}>
-                    <div className={styles.table}>1</div>
-                    <div className={styles.table}>2</div>
-                    <div className={styles.table}>3</div>
-                    <div className={styles.table}>4</div>
-                    <div className={styles.table}>5</div>
-                    <div className={styles.table}>6</div>
+                    {
+                        tables.map(
+                            (table) => ( 
+                                <div className={styles.table}>{table.fs_table_tableNo}</div>
+                            )
+                        )
+                    }
                 </div>
         </div>
     )

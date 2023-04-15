@@ -23,7 +23,7 @@ export default function Home() {
           <Header></Header>
           <div className={styles.body}>
             <Navbar></Navbar>
-            <ScreenView></ScreenView>
+            <ScreenView screenActive = "Pos"></ScreenView>
           </div>
         </div>
         <Footer></Footer>
