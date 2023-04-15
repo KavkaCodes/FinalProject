@@ -4,11 +4,15 @@ import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import ScreenView from '../Screens/View/screenView'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-
 const inter = Inter({ subsets: ['latin'] })
+import { useState } from 'react';
 
 export default function Home() {
+  const [screenActive, setScreenActive] = useState('Dashboard');
+  const [tableActive, setTableActive] = useState('101');
+  // function Navbar() {
+    
+  // }
   return (
     <>
       <Head>
@@ -18,12 +22,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
       </Head>
-      <main className={styles.main}>
+      <main class="main">
         <div>
-          <Header></Header>
-          <div className={styles.body}>
-            <Navbar></Navbar>
-            <ScreenView screenActive = "Pos"></ScreenView>
+          <Header state = {screenActive}></Header>
+          <div class="body">
+            <Navbar state = {[screenActive, setScreenActive]}></Navbar>
+            <ScreenView screenActive = {screenActive} tableActive = {[tableActive,setTableActive]}></ScreenView>
           </div>
         </div>
         <Footer></Footer>
@@ -31,3 +35,7 @@ export default function Home() {
     </>
   )
 }
+
+
+
+

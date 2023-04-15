@@ -1,0 +1,404 @@
+
+/* Header */
+.header{
+    background: linear-gradient(270deg, #006FAA 0%, #3B9CD0 100%);
+  
+    height: 30px;
+    padding: 2.5px 12px;
+    width: 100%;
+  
+  }
+  
+  .pageName{
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 18px;
+  }
+  /* Body css start */
+  .body{
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    /* justify-content: space-between; */
+  
+    height: 550px;
+    background: #ECECEC;
+  }
+  .navbar{
+    height: 80%;
+    width: 50px;
+    /* background-color: #FFFC31; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px 0;
+  
+    background: #FFFFFF;
+    box-shadow: -10px -10px 20px rgba(163, 156, 156, 0.25), 10px 10px 20px rgba(163, 156, 156, 0.25);
+    border-radius: 5px;
+  }
+  .navbarTop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+  }
+  .navbarBottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+  }
+  .userProfile{
+    padding: 10px;
+    border-top: 1.5px solid #B3D4E6;
+  }
+  .user{
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    background: #B3D4E6;
+  }
+  .screenView{
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+  
+    box-shadow: -10px -10px 20px rgba(163, 156, 156, 0.25), 10px 10px 20px rgba(163, 156, 156, 0.25);
+    border-radius: 5px;
+  
+    padding: 10px;
+  }
+  
+  /* POS start */
+  .pos, .billing{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px;
+    gap: 10px;
+  }
+  .tables{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 10px;
+  
+    width: 100%;
+  
+    background: rgba(179, 212, 230, 0.3);
+    border-radius: 5px;
+  }
+  .tablesLineOne{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: px;
+  
+  
+  }
+  #heading{
+    font-size: 16px;
+  }
+  .filters{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 0px;
+    gap: 10px;
+  }
+  .filter{
+    padding: 0px 16px;
+    font-size: 14px;
+  }
+  .tablesList{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+  }
+  .table{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+  
+    width: 30px;
+    height: 30px;
+  
+    background: #FF6058;
+    border: 5px solid #FF6058;
+    border-radius: 5px;
+  
+    font-size: 14px;
+  }
+  
+  .tableOrder{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+  
+    width: 100%;
+    
+  }
+  
+  .order, .bill{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    padding : 10px;
+    gap: 10px;
+  
+    width: 100%; 
+  
+    background: #E9F3F8;
+    border-radius: 5px;
+  }
+  
+  .orderInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+  
+    width: 100%;
+    /* gap: 40px; */
+  }
+  .categories{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 20px;
+    gap: 5px;
+  }
+  .category{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* padding: 0px 8px; */
+    gap: 8px;
+  
+    background: #E9F3F8;
+    border-radius: 5px;
+  }
+  
+  
+  .menu{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 32px 0px 0px;
+    /* gap: 8px; */
+  }
+  .searchBar{
+    width: 70%;
+    padding-bottom: 16px;
+  }
+  .textfield{
+    width: 100%;
+    padding: 10px 20px;
+    display: inline-block;
+    border: 1.5px solid #B6B6B6;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .menuList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  
+    height: 210px;
+    overflow-y: auto;
+    max-height: 210px;
+  }
+  .menuHeader, .billHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+  }
+  .menuHeaderItem, .billHeaderItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+  
+    width: 150px;
+    height: 30px;
+  
+    background: #3B9CD0;
+  }
+  
+  .menuHeaderItemText{
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .menuItem, .billItem{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+  }
+  .menuItem:nth-child(odd){
+      background-color: #ECECEC;
+  }
+  .menuItemField, .billItemField{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+  
+    width: 150px;
+    height: 30px;
+  }
+  .kotInfo{
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .kots{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+  }
+  .kotList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+  }
+  .kot{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 5px;
+  
+    width: 30px;
+    height: 30px;
+  
+    background: #E9F3F8;
+    border-radius: 200px;
+  
+    font-size: 14px;
+  }
+  /* POS end */
+  /* Billing start */
+  
+  .bill{
+    padding: 18px;
+  
+    height: 410px;
+  }
+  .billing{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  
+    width: 100%;
+  }
+  .billInfo{
+    max-height: 200px;
+    width: 100%;
+    overflow-y: auto;
+  }
+  .billHeaderItem, .billItemField{ 
+    width: 25%;
+  }
+  .billItem:nth-child(even){
+    background-color: #B3D4E6;
+  }
+  
+  .billCalc{
+    padding-left: 74.5%;
+  }
+  .calc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px 16px;
+    gap: 32px;
+  }
+  .amount{
+    font-weight: 700;
+    font-size: 16px;
+  }
+  #separateGap{
+    margin-top: 5px;
+  }
+  #separate{
+    padding-left: 32px;
+    border-top: 1px solid #000000;
+  }
+  /* Billing end */
+  
+  /* Body css end */
+  
+  /* Footer */
+  .footer{
+    display: flex;
+    justify-content: start;
+  
+    height: 14px;
+    width: 100%;
+    padding-left: 10px;
+  
+    background-color: #2d2d2d;
+  
+  }
+  .stamp{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #FFFFFF;
+  
+    font-weight: 400;
+    letter-spacing: 0.35em;
+  }
+  .kavka{
+    color: #FFFC31;
+  }
+
+  /* Buttons */
+  .btn{
+    background: none;
+    border-radius: 5px;
+    padding: 4px;
+
+    border: none;
+  }
+
+  .btnActive, .btn:hover{
+    background: rgba(0, 111, 170, 0.3);
+    border-radius: 5px;
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+  }
+  
