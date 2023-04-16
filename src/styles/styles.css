@@ -111,7 +111,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 8px 0px;
+    padding: 8px 0px 8px 10px;
     gap: 10px;
   }
   .filter{
@@ -142,7 +142,22 @@
   
     font-size: 14px;
   }
-  
+  #BillPrinted{
+    background: #FF6058;
+    border: 10px solid #FF6058;
+  }
+  #Occupied{
+    background: #F5893A;
+    border: 10px solid #F5893A;
+  }
+  #Empty{
+    background: #27CA40;
+    border: 10px solid #27CA40;
+  }
+  #Reserved{
+    background: #B8ADAD;
+    border: 10px solid #B8ADAD;
+  }
   .tableOrder{
     display: flex;
     flex-direction: row;
@@ -186,15 +201,16 @@
     padding: 32px 20px;
     gap: 5px;
   }
-  .category{
+  .categoryBtn{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     /* padding: 0px 8px; */
     gap: 8px;
-  
-    background: #E9F3F8;
+    width: 100%;
+    text-align: center;
+    /* background: #E9F3F8; */
     border-radius: 5px;
   }
   
@@ -390,7 +406,7 @@
     background: none;
     border-radius: 5px;
     padding: 4px;
-
+    background: #E9F3F8;
     border: none;
   }
 
@@ -401,4 +417,17 @@
     border: none;
     cursor: pointer;
   }
+  .kot, .kot:hover{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 5px;
   
+    width: 30px;
+    height: 30px;
+    border-radius: 200px;
+  
+    font-size: 14px;
+  }

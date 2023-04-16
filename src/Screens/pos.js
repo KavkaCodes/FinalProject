@@ -1,67 +1,38 @@
-import styles from '@/styles/Home.module.css'
+import { useState } from 'react';
 import Tables from "../components/tables";
-import categories from "../data/categories";
-import menu from "../data/menu"
 
-export default function Pos(tableActive){
+import Menu from "../components/menu"
+import MenuCategories from "../components/menuCategories"
+import tables from "../data/tables"
 
+export default function Pos(params){
+    const [menuCategoryActive, setmenuCategoryActive] = useState('All');
+
+    let newKot = [];
+    let table = tables.filter(
+            (table) => (table.fs_table_tableNo == params.tableActive[0])
+        ); 
+    let kotList = table.length?table[0].fs_kots:[];      
+    console.log(kotList);  
+    function clickKot(makeActive) {
+        params.kotActive[1](makeActive);
+      }
+    function newKotCreate() {
+        params.kotActive[1]("NEW");
+        newKot = [];
+    }  
     return (
         <div class="pos">
-            <Tables tableActive={tableActive} forScreen="POS"></Tables>
-
+            <Tables tableActive={params.tableActive} kotActive = {params.kotActive} forScreen="POS"></Tables>
+           
             <div class="tableOrder">
                 <div class="order">
                     <div class="orderInfo">
-                        <div class="categories">
-                            <div class="category">
-                                All
-                            </div>
-                            {
-                                categories.map(
-                                    (category) => (
-                                        <div class="category">{category}</div>
-                                    )
-                                )
-                            }
-                        </div>
-                        <div class="menu">
-                            <div class="searchBar">
-                                <input type="text" id={styles.menuSearch} class="textfield" name="menuSearch" placeholder="Search through the menu" />
-                            </div>
-                            <div class="menuList">
-                                <div class="menuHeader">
-                                    <div class="menuHeaderItem">
-                                    <p class="menuHeaderItemText">
-                                            Item Name
-                                        </p>
-                                        
-                                    </div>
-                                    <div class="menuHeaderItem">
-                                        <p class="menuHeaderItemText">
-                                            Rate
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="menuItems">
-
-                                {
-                                    menu.map(
-                                        (item) => ( 
-                                            <div class="menuItem">
-                                                <div class="menuItemField">
-                                                    {item.fs_menu_itemName}
-                                                </div>
-                                                <div class="menuItemField">
-                                                    {item.fs_menu_itemRate}
-                                                </div>
-                                            </div>
-                                        )
-                                    )
-                                }
-                                </div>
-                            </div>
-                        </div>
-                        <div class="kotInfo">
+                        <MenuCategories menuCategoryActive={[menuCategoryActive,setmenuCategoryActive]} kotActive={params.kotActive}></MenuCategories>
+                        <Menu  menuCategoryActive={[menuCategoryActive,setmenuCategoryActive]} kotActive={params.kotActive}></Menu>
+                        {params.kotActive[0] == ""
+                        ?<EmptyKot></EmptyKot>
+                        :<div class="kotInfo">
                             <div class="menuHeader">
                                     <div class="menuHeaderItem">
                                     <p class="menuHeaderItemText">
@@ -85,190 +56,45 @@ export default function Pos(tableActive){
                                     </div>
                             </div>
                             <div class="menuItems">
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
-                                <div class="menuItem">
-                                        <div class="menuItemField">
-                                            Butter Chicken
-                                        </div>
-                                        <div class="menuItemField">
-                                            2
-                                        </div>
-                                        <div class="menuItemField">
-                                            11.20
-                                        </div>
-                                        <div class="menuItemField">
-                                            ---
-                                        </div>
-                                </div>
+                                {
+                                    params.kotActive[0] == "NEW"? newKot.map(
+                                        (item)=>(
+                                            <div class="menuItem">
+                                                <div class="menuItemField">
+                                                    {item.fs_menu_itemName}
+                                                </div>
+                                                <div class="menuItemField">
+                                                {item.fs_kotList_qty}
+                                                </div>
+                                                <div class="menuItemField">
+                                                    {item.fs_menu_itemRate}
+                                                </div>
+                                                <div class="menuItemField">
+                                                    {item.fs_kotList_specialInstruction?item.fs_kotList_specialInstruction:"---"}
+                                                </div>
+                                            </div>
+                                        )
+                                    ) :kotList[params.kotActive[0]-1].map(
+                                        (item)=>(
+                                            <div class="menuItem">
+                                                <div class="menuItemField">
+                                                    {item.fs_menu_itemName}
+                                                </div>
+                                                <div class="menuItemField">
+                                                {item.fs_kotList_qty}
+                                                </div>
+                                                <div class="menuItemField">
+                                                    {item.fs_menu_itemRate}
+                                                </div>
+                                                <div class="menuItemField">
+                                                    {item.fs_kotList_specialInstruction?item.fs_kotList_specialInstruction:"---"}
+                                                </div>
+                                            </div>
+                                        )
+                                    )   
+                                }
                             </div>
-                        </div>
+                        </div>}
                     </div>
                     <div class="buttons">
                     
@@ -277,18 +103,54 @@ export default function Pos(tableActive){
                 <div class="kots">
                     <h1 id="heading">KOTS</h1>
                     <div class="kotList">
-                        <div class="kot">1</div>
-                        <div class="kot">2</div>
-                        <div class="kot">3</div>
-                        <div class="kot">4</div>
-                        <div class="kot">5</div>
-                        <div class="kot">
-                            <span class="material-symbols-outlined">add</span>
-                        </div>
+                    {
+                        kotList.map(
+                            (kot) => (
+                                <button onClick= {()=>clickKot(kotList.indexOf(kot) + 1)} class={params.kotActive[0]==kotList.indexOf(kot) + 1 ? "btnActive kot" :"btn kot"}>
+                                    {kotList.indexOf(kot) + 1}
+                                </button>
+                            )
+                        )
+                    }
+                    {
+                        params.tableActive[0]!=""?<button onClick={()=>newKotCreate()} class="btnActive kot">
+                                <span class="material-symbols-outlined">add</span>
+                        </button>: <div></div>
+                    }
+                        
                     </div>
                 </div>
             </div>
 
         </div>
+    )
+}
+
+function EmptyKot() {
+    return(
+        <div class="kotInfo">
+                        <div class="menuHeader">
+                                <div class="menuHeaderItem">
+                                <p class="menuHeaderItemText">
+                                        Item Name
+                                    </p>
+                                    
+                                </div><div class="menuHeaderItem">
+                                    <p class="menuHeaderItemText">
+                                        Quantity
+                                    </p>
+                                </div>
+                                <div class="menuHeaderItem">
+                                    <p class="menuHeaderItemText">
+                                        Rate
+                                    </p>
+                                </div>
+                                <div class="menuHeaderItem">
+                                    <p class="menuHeaderItemText">
+                                        Comments
+                                    </p>
+                                </div>
+                        </div>
+                        </div>
     )
 }

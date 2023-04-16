@@ -1,22 +1,24 @@
 import Home from "../pages/index";
-export default function Navbar(state, onClick){
+export default function Navbar(params){
     function click(makeActive) {
-        state.state[1](makeActive);
+        params.screenActive[1](makeActive);
+        params.kotActive[1]("");
+        params.kotActive[1]("");
       }
       return(
         <div class="navbar">
           <div class="navbarTop">
-            <button onClick= {()=>click("Dashboard")} id="dashboardbtn" class={state.state[0]=="Dashboard" ? "btnActive" :"btn"}>
+            <button onClick= {()=>click("Dashboard")} id="dashboardbtn" class={ params.screenActive[0]=="Dashboard" ? "btnActive" :"btn"}>
               <span class="material-symbols-outlined navBtn"  >
                 dashboard
               </span>
             </button>
-            <button onClick= {()=>click("POS")} id="posbtn" class={state.state[0]=="POS" ? "btnActive" :"btn"}>
+            <button onClick= {()=>click("POS")} id="posbtn" class={ params.screenActive[0]=="POS" ? "btnActive" :"btn"}>
               <span class="material-symbols-outlined navBtn" >
                 point_of_sale
               </span>
             </button>
-            <button onClick= {()=>click("Bill")} id="billbtn" class={state.state[0]=="Bill" ? "btnActive" :"btn"}>
+            <button onClick= {()=>click("Bill")} id="billbtn" class={ params.screenActive[0]=="Bill" ? "btnActive" :"btn"}>
               <span class="material-symbols-outlined navBtn" id="billbtn">
                 receipt_long
               </span>
@@ -24,7 +26,7 @@ export default function Navbar(state, onClick){
             
           </div>
           <div class="navbarBottom">
-            <button id="csbtn" class={state.state[0]=="Customer Service" ? "btnActive" :"btn"}>
+            <button id="csbtn" class={ params.screenActive[0]=="Customer Service" ? "btnActive" :"btn"}>
               <div class="customerService">
                 <span class="material-symbols-outlined">
                   headset_mic

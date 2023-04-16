@@ -8,11 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 import { useState } from 'react';
 
 export default function Home() {
-  const [screenActive, setScreenActive] = useState('Dashboard');
-  const [tableActive, setTableActive] = useState('101');
-  // function Navbar() {
-    
-  // }
+  const [screenActive, setScreenActive] = useState('POS');
+  const [tableActive, setTableActive] = useState("");
+  const [kotActive, setkotActive] = useState('');
   return (
     <>
       <Head>
@@ -26,11 +24,12 @@ export default function Home() {
         <div>
           <Header state = {screenActive}></Header>
           <div class="body">
-            <Navbar state = {[screenActive, setScreenActive]}></Navbar>
-            <ScreenView screenActive = {screenActive} tableActive = {[tableActive,setTableActive]}></ScreenView>
+            <Navbar screenActive = {[screenActive, setScreenActive]} tableActive = {[tableActive,setTableActive]} kotActive = {[kotActive,setkotActive]}></Navbar>
+            <ScreenView screenActive = {screenActive} tableActive = {[tableActive,setTableActive]} kotActive = {[kotActive,setkotActive]}>
+            </ScreenView>
           </div>
         </div>
-        <Footer></Footer>
+        <Footer state={tableActive}></Footer>
       </main>
     </>
   )
