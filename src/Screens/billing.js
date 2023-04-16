@@ -1,18 +1,26 @@
 
 import Tables from "../components/tables";
 import ActiveButton from '@/components/Buttons/activeButton';
+import DisabledButton from '../components/Buttons/disabledbutton';
 import tables from "../data/tables"
-
 export default function Billing(params){
+    // var easyinvoice = require('easyinvoice');
+
+    
     let table = params.tableActive[0] == ""?[]:tables.filter(
         (table)=>(
             params.tableActive[0] == table.fs_table_tableNo
         )
     )
+
     let bill = [];
     let billCalc = [];
+
     if (table.length != 0) {
         let subtotal = 0.00, taxableTotal = 0.00, taxAmount = 0.00, total = 0.00;
+        // const date = new Date();
+        // billInvoice.information.number = d.getFullYear() + 001;
+
         for (let i = 0; i < table[0].fs_kots.length; i++) {
             for (let j = 0; j < table[0].fs_kots[i].length; j++) {
                 const element = table[0].fs_kots[i][j];
@@ -103,9 +111,11 @@ export default function Billing(params){
                         </div>
                     </div>
 }
-                <div class="cta">
-                    <ActiveButton></ActiveButton>
-                </div>
+                {params.tableActive[0] == ""?<div></div>:<div class="billCta">
+
+                    <ActiveButton text="Print Bill" clickFunc = "printBill" bill= {bill}></ActiveButton>
+                    <DisabledButton text="Settle Bill"></DisabledButton>
+                </div>}
         </div>
         </div>
     )

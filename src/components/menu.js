@@ -12,7 +12,7 @@ export default function Menu(params) {
       
       if (searchInput.length > 0) {
             menuList = menuList.filter((item) => (
-                item.fs_menu_itemName.match(searchInput)
+                item.fs_menu_itemName.toLocaleUpperCase().match(searchInput.toLocaleUpperCase())
             )
         )
       }
@@ -23,7 +23,7 @@ export default function Menu(params) {
             </div>
             <div class="menuList">
                 <div class="menuHeader">
-                    <div class="menuHeaderItem">
+                    <div class="menuHeaderItem" >
                         <p class="menuHeaderItemText">Item Name</p>
                     </div>
                     <div class="menuHeaderItem">

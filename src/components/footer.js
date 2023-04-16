@@ -1,9 +1,11 @@
-import styles from '@/styles/Home.module.css'
 
-export default function Footer(){
+export default function Footer(params){
+    console.log(params)
     return (
-        <footer className={styles.footer}>
-            <p className={styles.stamp}>Designed by <span className={styles.kavka}>KAVKA</span> </p>
+        <footer class="footer">
+            <p class="stamp">Designed by <span class="kavka">KAVKA</span> </p>
+            <p class = "quickInfo">Selected Table : {params.params}</p>
+            <div></div>
         </footer>
     )
 }

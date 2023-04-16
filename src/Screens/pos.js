@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Tables from "../components/tables";
-
+import ActiveButton from '@/components/Buttons/activeButton';
+import DisabledButton from '../components/Buttons/disabledbutton';
 import Menu from "../components/menu"
 import MenuCategories from "../components/menuCategories"
 import tables from "../data/tables"
@@ -96,9 +97,27 @@ export default function Pos(params){
                             </div>
                         </div>}
                     </div>
-                    <div class="buttons">
-                    
-                    </div>
+                    {
+                        params.kotActive[0] == ""?
+                        <div></div>
+                        :<div class="billCta">
+                            {
+                                params.kotActive[0] == "NEW"?
+                                <DisabledButton text="Cancel KOT"></DisabledButton>:
+                                <ActiveButton text="Cancel KOT" clickFunc = "cancelKot"></ActiveButton>
+                            }
+                            {
+                                params.kotActive[0] == "NEW"?
+                                <DisabledButton text="Cancel KOT"></DisabledButton>:
+                                <ActiveButton text="Modify KOT" clickFunc = "modifyKot"></ActiveButton>
+                            }
+                            {
+                                params.kotActive[0] == "NEW"?
+                                <ActiveButton text="Print KOT" clickFunc = "modifyKot"></ActiveButton>:
+                                <DisabledButton text="Print KOT"></DisabledButton>
+                            }
+                        </div>
+                    }
                 </div>
                 <div class="kots">
                     <h1 id="heading">KOTS</h1>

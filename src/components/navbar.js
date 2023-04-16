@@ -1,8 +1,8 @@
-import Home from "../pages/index";
+
 export default function Navbar(params){
     function click(makeActive) {
         params.screenActive[1](makeActive);
-        params.kotActive[1]("");
+        params.tableActive[1]("");
         params.kotActive[1]("");
       }
       return(
