@@ -14,8 +14,9 @@ const poppins = Poppins(
   }
 )
 export default function Home() {
-  const [screenActive, setScreenActive] = useState("Dashboard");
+  const [screenActive, setScreenActive] = useState("Bill");
   const [tableActive, setTableActive] = useState("");
+  const [tableStatus, setTableStatus] = useState("");
   const [kotActive, setkotActive] = useState("");
   return (
     <>
@@ -42,8 +43,8 @@ export default function Home() {
         <div>
           <Header state = {screenActive}></Header>
           <div class="body">
-            <Navbar screenActive = {[screenActive, setScreenActive]} tableActive = {[tableActive,setTableActive]} kotActive = {[kotActive,setkotActive]}></Navbar>
-            <ScreenView screenActive = {screenActive} tableActive = {[tableActive,setTableActive]} kotActive = {[kotActive,setkotActive]}>
+            <Navbar screenActive = {[screenActive, setScreenActive]} tableActive = {[tableActive,setTableActive]} tableStatus = {[tableStatus,setTableStatus]} kotActive = {[kotActive,setkotActive]}></Navbar>
+            <ScreenView screenActive = {screenActive} tableActive = {[tableActive,setTableActive]} tableStatus = {[tableStatus,setTableStatus]} kotActive = {[kotActive,setkotActive]}>
             </ScreenView>
           </div>
         </div>

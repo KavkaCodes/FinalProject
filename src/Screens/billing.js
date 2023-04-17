@@ -1,8 +1,10 @@
 
+import BillHeader from "@/components/billHeader";
 import Tables from "../components/tables";
-import ActiveButton from '@/components/Buttons/activeButton';
-import DisabledButton from '../components/Buttons/disabledbutton';
 import tables from "../data/tables"
+import BillCTA from "@/components/Buttons/billButtons";
+import BillItems from "@/components/billItems";
+import BillCalc from "@/components/billCalc";
 export default function Billing(params){
     // var easyinvoice = require('easyinvoice');
 
@@ -37,85 +39,16 @@ export default function Billing(params){
     
     return (
         <div class="billing">
-            <Tables tableActive={params.tableActive} kotActive = {params.kotActive} forScreen="Billing"></Tables>
+            <Tables tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} forScreen="Billing"></Tables>
             <div class="bill">
-                {params.tableActive[0] == ""?<div class="billing">
-                    <div class="billInfo">
-                        <div class="billHeader">
-                            <div class="billHeaderItem">
-                                <p class="billHeaderItemText">Item Name</p>
-                            </div>
-                            <div class="billHeaderItem">
-                                <p class="billHeaderItemText">Comments</p>
-                            </div>
-                            <div class="billHeaderItem">
-                                <p class="billHeaderItemText">Quantity</p>
-                            </div>
-                            <div class="billHeaderItem">
-                                <p class="billHeaderItemText">Rate</p>
-                            </div>
-                        </div>
-                    </div> 
-                </div>:<div class="billing">
-                        <div class="billInfo">
-                            <div class="billHeader">
-                                <div class="billHeaderItem">
-                                    <p class="billHeaderItemText">Item Name</p>
-                                </div>
-                                <div class="billHeaderItem">
-                                    <p class="billHeaderItemText">Comments</p>
-                                </div>
-                                <div class="billHeaderItem">
-                                    <p class="billHeaderItemText">Quantity</p>
-                                </div>
-                                <div class="billHeaderItem">
-                                    <p class="billHeaderItemText">Rate</p>
-                                </div>
-                            </div>
-                            <div class="billItems">
-                                {
-                                    bill.map(
-                                        (item)=>(
-                                            <div class="billItem">
-                                                <div class="billItemField">
-                                                    {item.fs_menu_itemName}
-                                                </div>
-                                                <div class="billItemField">
-                                                    {item.fs_kotList_specialInstruction?item.fs_kotList_specialInstruction:"---"}
-                                                </div>
-                                                <div class="billItemField">
-                                                    {item.fs_kotList_qty}
-                                                </div>
-                                                <div class="billItemField">
-                                                    {item.fs_menu_itemRate}
-                                                </div>
-                                            </div>
-                                        )
-                                    )
-                                }
-                            </div>
-                        </div>
-                        <div class="billCalc">
-                            <div class="calc" id="separateGap" >
-                                <p class="calcClassification" >SubTotal:</p>
-                                <p class="amount">{billCalc[0]}</p>
-                            </div>
-                            <div class="calc">
-                                <p class="calcClassification">HST 13%:</p>
-                                <p class="amount">{billCalc[2]}</p>
-                            </div>
-                            <div class="calc" id="separateGap">
-                                <p class="calcClassification">Total:</p>
-                                <p class="amount" id="separate">{billCalc[3]}</p>
-                            </div>
-                        </div>
+                <div class = "billing">
+                    <div class = "billInfo">
+                        <BillHeader></BillHeader>
+                        <BillItems tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} bill={bill}></BillItems>
+                        <BillCalc tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} billCalc={billCalc}></BillCalc>
                     </div>
-}
-                {params.tableActive[0] == ""?<div></div>:<div class="billCta">
-
-                    <ActiveButton text="Print Bill" clickFunc = "printBill" bill= {bill}></ActiveButton>
-                    <DisabledButton text="Settle Bill"></DisabledButton>
-                </div>}
+                </div>
+                <BillCTA tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} bill={bill}></BillCTA>
         </div>
         </div>
     )

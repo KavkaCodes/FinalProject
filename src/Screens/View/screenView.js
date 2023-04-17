@@ -6,13 +6,13 @@ export default function ScreenView(params){
     if (params.screenActive == "POS") {
         return (
             <div className={styles.screenView}>
-                <Pos tableActive = {params.tableActive} kotActive = {params.kotActive}></Pos>
+                <Pos tableActive = {params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive}></Pos>
             </div>
         )
     } else {
         return (
             <div className={styles.screenView}>
-                <Billing tableActive = {params.tableActive} kotActive = {params.kotActive}></Billing>
+                <Billing tableActive = {params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive}></Billing>
             </div>
         )
     }

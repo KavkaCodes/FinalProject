@@ -3,6 +3,7 @@ export default function Navbar(params){
     function click(makeActive) {
         params.screenActive[1](makeActive);
         params.tableActive[1]("");
+        params.tableStatus[1]("");
         params.kotActive[1]("");
       }
       return(

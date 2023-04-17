@@ -10,9 +10,10 @@ export default function Tables(params){
             params.tableActive[1]("");
             params.kotActive[1]("");
           }
-        function clickTable(makeActive) {
-            params.tableActive[1](makeActive);
-
+        function clickTable(tabNo, tabStatus) {
+            params.tableActive[1](tabNo);
+            params.tableStatus[1](tabStatus);
+            console.log(params.tableStatus[0])
             params.kotActive[1]("");
           }  
         let tableList = filterActive != "All"?tables.filter((table) => (table.fs_table_tabStatus == filterActive)):tables;
@@ -39,7 +40,7 @@ export default function Tables(params){
                         {
                             tableList.map(
                                 (table) => (
-                                    <button onClick={()=>clickTable(table.fs_table_tableNo)} class={params.tableActive[0]==table.fs_table_tableNo ? "btnActive" :"btn"}>
+                                    <button onClick={()=>clickTable(table.fs_table_tableNo, table.fs_table_tabStatus)} class={params.tableActive[0]==table.fs_table_tableNo ? "btnActive" :"btn"}>
                                         <div class="table" id={table.fs_table_tabStatus}>{table.fs_table_tableNo}</div>
                                     </button>
                                     
@@ -54,11 +55,13 @@ export default function Tables(params){
         function clickFilter(makeActive) {
             setfilterActive(makeActive);
             params.tableActive[1]("");
+            params.tableStatus[1]("");
             params.kotActive[1]("");
           }
-          function clickTable(makeActive) {
+          function clickTable(makeActive, makeActiveStatus) {
             console.log("hello");
             params.tableActive[1](makeActive);
+            params.tableStatus[1](makeActiveStatus);
             params.kotActive[1]("");
           }  
         let tableList = filterActive != "All"?tables.filter((table) => (table.fs_table_tabStatus == filterActive)):tables.filter((table) => (table.fs_table_tabStatus != "Empty"));
@@ -84,7 +87,7 @@ export default function Tables(params){
                         {
                                     tableList.map(
                                         (table) => (
-                                            <button onClick={()=>clickTable(table.fs_table_tableNo)} class={params.tableActive[0]==table.fs_table_tableNo ? "btnActive" :"btn"}>
+                                            <button onClick={()=>clickTable(table.fs_table_tableNo, table.fs_table_tabStatus)} class={params.tableActive[0]==table.fs_table_tableNo ? "btnActive" :"btn"}>
                                                 <div class="table" id={table.fs_table_tabStatus}>{table.fs_table_tableNo}</div>
                                             </button>
                                     

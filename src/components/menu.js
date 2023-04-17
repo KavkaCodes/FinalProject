@@ -1,6 +1,6 @@
 import menu from "../data/menu"
 import { useState } from 'react';
-
+import newKot from "@/data/newKot";
 export default function Menu(params) {
     let menuList = (params.menuCategoryActive[0] == "All"?menu:menu.filter((item)=> (item.fs_menu_category == params.menuCategoryActive[0])));
 
@@ -15,6 +15,11 @@ export default function Menu(params) {
                 item.fs_menu_itemName.toLocaleUpperCase().match(searchInput.toLocaleUpperCase())
             )
         )
+      }
+
+      function clickMenuItem(item) {
+        newKot.push(item);
+        console.log(newKot);
       }
     return(
         <div class="menu">
@@ -34,14 +39,14 @@ export default function Menu(params) {
                     {
                         menuList.map(
                             (item) => ( 
-                                <div class="menuItem">
+                                <button class="menuItem" id={params.kotActive[0] == "NEW"?"menuItemAllowed":"menuItemNotAllowed"} onDoubleClick={params.kotActive[0] == "NEW"?()=>clickMenuItem(item):void(0)}>
                                     <div class="menuItemField">
                                         {item.fs_menu_itemName}
                                     </div>
                                     <div class="menuItemField">
                                         {item.fs_menu_itemRate}
                                     </div>
-                                </div>
+                                </button>
                             )
                         )
                     }

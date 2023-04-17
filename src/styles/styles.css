@@ -240,7 +240,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-  
+
+  }
+  .menuItems{
     height: 210px;
     overflow-y: auto;
     max-height: 210px;
@@ -268,6 +270,15 @@
   .menuHeaderItemText{
     font-weight: 700;
     font-size: 14px;
+  }
+  .menuItem{
+    border: 0;
+  }
+  #menuItemAllowed:hover{
+    cursor: pointer;
+  }
+  #menuItemNotAllowed:hover{
+    cursor: not-allowed;
   }
   .menuItem, .billItem{
     display: flex;
@@ -339,8 +350,11 @@
     width: 100%;
   }
   .billInfo{
-    max-height: 200px;
     width: 100%;
+  }
+  .billItems{
+    max-height: 200px;
+    height: 200px;
     overflow-y: auto;
   }
   .billHeaderItem, .billItemField{ 
@@ -441,7 +455,9 @@
   
     font-size: 14px;
   }
-
+  .billCtaDiv, .kotItemsDiv, .billitemsDiv, .billCalcDiv{
+    width: 100%;
+  }
   .billCta{
     display: flex;
     flex-direction: row;
