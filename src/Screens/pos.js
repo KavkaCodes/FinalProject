@@ -17,21 +17,21 @@ export default function Pos(params){
     let kotList = table.length?table[0].fs_kots:[]; 
     return (
         <div class="pos">
-            <Tables tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} forScreen="POS"></Tables>
+            <Tables tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} currentOrder = {params.currentOrder} newKot = {params.newKot} forScreen="POS"></Tables>
            
             <div class="tableOrder">
                 <div class="order">
                     <div class="orderInfo">
-                        <MenuCategories menuCategoryActive={[menuCategoryActive,setmenuCategoryActive]} kotActive={params.kotActive}></MenuCategories>
-                        <Menu  menuCategoryActive={[menuCategoryActive,setmenuCategoryActive]} kotActive={params.kotActive}></Menu>
+                        <MenuCategories menuCategoryActive={[menuCategoryActive,setmenuCategoryActive]} kotActive={params.kotActive} currentOrder = {params.currentOrder}></MenuCategories>
+                        <Menu  menuCategoryActive={[menuCategoryActive,setmenuCategoryActive]} kotActive={params.kotActive} currentOrder = {params.currentOrder} newKot = {params.newKot} tableActive={params.tableActive}></Menu>
                         <div class="kotInfo">
                             <KotHeader></KotHeader>
-                            <KotItems tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} kotList = {kotList}></KotItems>
+                            <KotItems tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} kotList = {kotList} currentOrder = {params.currentOrder} newKot = {params.newKot}></KotItems>
                         </div>
                     </div>
-                    <PosCTA tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} kotList = {kotList} ></PosCTA>
+                    <PosCTA tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} kotList = {kotList} currentOrder = {params.currentOrder} newKot = {params.newKot} ></PosCTA>
                 </div>
-                <Kots tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} kotList = {kotList} ></Kots>
+                <Kots tableActive={params.tableActive} tableStatus={params.tableStatus} kotActive = {params.kotActive} kotList = {kotList} currentOrder = {params.currentOrder} newKot = {params.newKot}></Kots>
                 
             </div>
 

@@ -1,8 +1,16 @@
 import tables from "../data/tables";
 import { useState } from 'react';
+import currentOrders from "../data/currentOrders" 
 
 export default function Tables(params){
-    
+    function clickTable(tabNo, tabStatus) {
+        console.log(typeof tables);
+        params.tableActive[1](tabNo);
+        params.tableStatus[1](tabStatus);
+        params.kotActive[1]("");
+        params.currentOrder[1](currentOrders[tabNo]);
+        params.newKot[1]([]);
+      } 
     if(params.forScreen == "POS"){
         const [filterActive, setfilterActive] = useState('All');
         function clickFilter(makeActive) {
@@ -10,12 +18,7 @@ export default function Tables(params){
             params.tableActive[1]("");
             params.kotActive[1]("");
           }
-        function clickTable(tabNo, tabStatus) {
-            params.tableActive[1](tabNo);
-            params.tableStatus[1](tabStatus);
-            console.log(params.tableStatus[0])
-            params.kotActive[1]("");
-          }  
+         
         let tableList = filterActive != "All"?tables.filter((table) => (table.fs_table_tabStatus == filterActive)):tables;
         return (
             <div class="tables">
@@ -58,12 +61,6 @@ export default function Tables(params){
             params.tableStatus[1]("");
             params.kotActive[1]("");
           }
-          function clickTable(makeActive, makeActiveStatus) {
-            console.log("hello");
-            params.tableActive[1](makeActive);
-            params.tableStatus[1](makeActiveStatus);
-            params.kotActive[1]("");
-          }  
         let tableList = filterActive != "All"?tables.filter((table) => (table.fs_table_tabStatus == filterActive)):tables.filter((table) => (table.fs_table_tabStatus != "Empty"));
 
         return (

@@ -7,6 +7,14 @@ import ScreenView from '../Screens/View/screenView'
 import { useState } from 'react';
 import { Poppins } from "next/font/google";
 
+// TODO: 
+// Table status should update on printing kot, bill or settling
+// Authentication
+// Settle bill
+// Take contact info on printing bill
+// Display all order on dashboard
+// Proper comments
+
 const poppins = Poppins(
   { 
     weight: ['400', '700'],
@@ -14,10 +22,14 @@ const poppins = Poppins(
   }
 )
 export default function Home() {
-  const [screenActive, setScreenActive] = useState("Bill");
+  // console.log(orderNoFetch());
+  const [screenActive, setScreenActive] = useState("Dashboard");
   const [tableActive, setTableActive] = useState("");
   const [tableStatus, setTableStatus] = useState("");
   const [kotActive, setkotActive] = useState("");
+  const [currentOrder, setCurrentOrder] = useState({});
+  const [newKot, setNewKot] = useState([]);
+
   return (
     <>
       <Head>
@@ -43,8 +55,9 @@ export default function Home() {
         <div>
           <Header state = {screenActive}></Header>
           <div class="body">
-            <Navbar screenActive = {[screenActive, setScreenActive]} tableActive = {[tableActive,setTableActive]} tableStatus = {[tableStatus,setTableStatus]} kotActive = {[kotActive,setkotActive]}></Navbar>
-            <ScreenView screenActive = {screenActive} tableActive = {[tableActive,setTableActive]} tableStatus = {[tableStatus,setTableStatus]} kotActive = {[kotActive,setkotActive]}>
+            
+            <Navbar screenActive = {[screenActive, setScreenActive]} tableActive = {[tableActive,setTableActive]} tableStatus = {[tableStatus,setTableStatus]} kotActive = {[kotActive,setkotActive]} currentOrder = {[currentOrder, setCurrentOrder]} newKot = {[newKot, setNewKot]}></Navbar>
+            <ScreenView screenActive = {screenActive} tableActive = {[tableActive,setTableActive]} tableStatus = {[tableStatus,setTableStatus]} kotActive = {[kotActive,setkotActive]} currentOrder = {[currentOrder, setCurrentOrder]} newKot = {[newKot, setNewKot]}>
             </ScreenView>
           </div>
         </div>

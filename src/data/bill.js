@@ -11,7 +11,7 @@ var billInvoiceTemplate = {
         // The logo on top of your invoice
         "logo": "https://public.easyinvoice.cloud/img/logo_en_original.png",
         // The invoice background
-        "background": "https://public.easyinvoice.cloud/img/watermark-draft.jpg"
+        // "background": "https://public.easyinvoice.cloud/img/watermark-draft.jpg"
     },
     // Your own data
     "sender": {
@@ -30,8 +30,8 @@ var billInvoiceTemplate = {
         "address": "Clientstreet 456",
         "zip": "4567 CD",
         "city": "Clientcity",
-        "country": "Clientcountry"
-        // "custom1": "custom value 1",
+        "country": "Clientcountry",
+        "contact": "6478614418",
         // "custom2": "custom value 2",
         // "custom3": "custom value 3"
     },
