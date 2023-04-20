@@ -11,6 +11,18 @@ export default function Kots(params) {
     const isObjectEmpty = (objectName) => {
         return Object.keys(objectName).length === 0
     }
+
+    function getTableInfo(myTablesLine) {
+        for (let i = 0; i < myTablesLine.length; i++) {
+            const element = myTablesLine[i];
+            console.log(params.tableActive[0]);
+            console.log(element);
+            if (element.fs_table_tableNo == params.tableActive[0]) {
+                console.log(element.fs_table_tabStatus);
+                return element.fs_table_tabStatus;
+            }
+        }
+    }
     return(
         <div class="kots">
             <h1 id="heading">KOTS</h1>
@@ -33,7 +45,7 @@ export default function Kots(params) {
                 )
             }
             {
-                params.tableActive[0]=="" || params.tableStatus[0]=="BillPrinted"?
+                params.tableActive[0]=="" ||  getTableInfo(params.tablesLine[0])=="BillPrinted"?
                 <div></div>:
                 <button onClick={()=>newKotCreate()} class="btnActive kot">
                     <span class="material-symbols-outlined">add</span>

@@ -3,15 +3,12 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 import ScreenView from '../Screens/View/screenView'
-
+import tables from '../data/tables'
 import { useState } from 'react';
 import { Poppins } from "next/font/google";
 
 // TODO: 
-// Table status should update on printing kot, bill or settling
 // Authentication
-// Settle bill
-// Take contact info on printing bill
 // Display all order on dashboard
 // Proper comments
 
@@ -23,9 +20,9 @@ const poppins = Poppins(
 )
 export default function Home() {
   // console.log(orderNoFetch());
-  const [screenActive, setScreenActive] = useState("Dashboard");
+  const [screenActive, setScreenActive] = useState("POS");
   const [tableActive, setTableActive] = useState("");
-  const [tableStatus, setTableStatus] = useState("");
+  const [tablesLine, setTablesLine] = useState(tables);
   const [kotActive, setkotActive] = useState("");
   const [currentOrder, setCurrentOrder] = useState({});
   const [newKot, setNewKot] = useState([]);
@@ -56,8 +53,8 @@ export default function Home() {
           <Header state = {screenActive}></Header>
           <div class="body">
             
-            <Navbar screenActive = {[screenActive, setScreenActive]} tableActive = {[tableActive,setTableActive]} tableStatus = {[tableStatus,setTableStatus]} kotActive = {[kotActive,setkotActive]} currentOrder = {[currentOrder, setCurrentOrder]} newKot = {[newKot, setNewKot]}></Navbar>
-            <ScreenView screenActive = {screenActive} tableActive = {[tableActive,setTableActive]} tableStatus = {[tableStatus,setTableStatus]} kotActive = {[kotActive,setkotActive]} currentOrder = {[currentOrder, setCurrentOrder]} newKot = {[newKot, setNewKot]}>
+            <Navbar screenActive = {[screenActive, setScreenActive]} tableActive = {[tableActive,setTableActive]}  kotActive = {[kotActive,setkotActive]} currentOrder = {[currentOrder, setCurrentOrder]} newKot = {[newKot, setNewKot]}></Navbar>
+            <ScreenView screenActive = {[screenActive, setScreenActive]} tableActive = {[tableActive,setTableActive]} tablesLine = {[tablesLine, setTablesLine]} kotActive = {[kotActive,setkotActive]} currentOrder = {[currentOrder, setCurrentOrder]} newKot = {[newKot, setNewKot]} >
             </ScreenView>
           </div>
         </div>

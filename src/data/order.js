@@ -1,4 +1,3 @@
-let orderNoIncrement = "030";
 
 let orders = [
     {
@@ -70,10 +69,18 @@ let orders = [
         "fs_orders_printTime": "",
         "fs_orders_isSettled" : true,
         "fs_orders_settleTime": "",
+        "fs_currentOrder_clientInfo": {
+            "fs_currentOrder_clientName" : "",
+            "fs_currentOrder_clientContactNo" : "",
+            "fs_currentOrder_clientAddress" : "",
+        },
         "fs_orders_subTotal": 300,
         "fs_orders_taxableTotal": 280,
         "fs_orders_taxAmount": 30,
         "fs_orders_total": 320,
     },
     
+    
 ];
+
+export default orders;

@@ -30,20 +30,6 @@ export default function Menu(params) {
         setDisplay((prevDisplay) => !prevDisplay)
         console.log(params.currentOrder[0]);
       }
-      function clickAddItem(item) {
-        let orderItems = [...params.newKot[0]]
-        let orderItem = {
-            "fs_menu_itemId" : item.fs_menu_itemId,
-            "fs_menu_itemName" : item.fs_menu_itemName,
-            "fs_menu_isTaxable" : item.fs_menu_isTaxable, 
-            "fs_menu_itemRate": item.fs_menu_itemRate,
-            "fs_kotList_qty" : item.fs_kotList_qty,
-            "fs_kotList_specialInstruction" : item.fs_kotList_specialInstruction,
-        }
-        orderItems.push(item);
-        params.newKot[1](orderItems);
-        console.log(params.newKot[0])
-      }
     return(
         <div class="menu">
             <div class="popUpModal" style={{ zIndex: display ? 99 : -3 }}>
@@ -56,7 +42,7 @@ export default function Menu(params) {
                 </div>
                 <div class="itemInfoBox">
                     <div className="infoBox">
-                        <p class="infoPara">KOT No.: {params.currentOrder[0].length > 0 && params.tableActive != ""?params.currentOrder[0]["fs_currentOrder_kots"].length + 1: "Nan"}</p>
+                        <p class="infoPara">KOT No.: {params.currentOrder[0].length > 0 && params.tableActive != ""?params.currentOrder[0]["fs_currentOrder_kots"].length + 1: "Null"}</p>
                         <p class="infoPara">Table No.: {params.tableActive[0]}</p>
                     </div>
                     <h1>
