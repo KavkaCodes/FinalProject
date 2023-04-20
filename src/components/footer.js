@@ -1,3 +1,8 @@
+// Components
+// Screens
+// Pages
+// Data
+// Packages
 
 export default function Footer(params){
     return (

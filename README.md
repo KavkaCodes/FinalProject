@@ -1,38 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SolPOS Web - A Point of Sale Web App for Restaurants
 
+SolPOS Web is a user-friendly and intuitive point of sale web application designed for restaurants to manage their orders effectively. With SolPOS Web, restaurants can easily manage their tables, print and modify kitchen order tickets (KOTs), print and settle bills, and view their sales performance through a comprehensive dashboard.
+## Features
+
+- Table Management: SolPOS Web allows restaurants to manage their tables efficiently. They can add new tables, remove existing tables, and assign orders to specific tables.
+- KOT Management: The app enables restaurants to print KOTs and modify them according to their needs.
+- Bill Settlement: SolPOS Web lets the restaurant staff print and settle bills quickly and efficiently.
+- Dashboard: The app provides a comprehensive dashboard that allows restaurants to view their order history, daily/monthly/yearly sales, and performance. The dashboard also allows the restaurant to manage their menu and prices.
+- Menu Management: SolPOS Web enables restaurants to add, remove and modify menu items and prices as per their requirements.
+
+## Technology Stack
+
+SolPOS Web is built using modern web technologies such as NextJS, Node.js, and Firebase. The app is designed to be scalable and responsive, ensuring a seamless experience for the restaurant staff and their customers.
+
+## Subscription Model
+
+SolPOS Web will be sold on a subscription model, and the pricing will be based on the number of tables and users the restaurant requires. The subscription will include access to the web app, technical support, and software updates.
+## Release Date
+
+SolPOS Web is currently in development, and we are working hard to ensure that the app meets the highest standards of quality and usability. We plan to release the app soon, and we will keep you updated on our progress.
 ## Getting Started
 
-First, run the development server:
+To get started with SolPOS Web, visit our website and sign up for a subscription. Once you have a subscription, you can log in to the web app and start managing your restaurant's orders, bills, and menu items. The dashboard provides comprehensive insights into your restaurant's performance, enabling you to make informed business decisions.
+## License
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+SolPOS Web will be licensed under the MIT License, which means you can use, modify, and distribute the app freely. However, we would appreciate it if you gave us credit for the original work.

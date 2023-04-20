@@ -1,5 +1,11 @@
+// Components
 import ActiveButton from './activeButton';
 import DisabledButton from './disabledbutton';
+// Screens
+// Pages
+// Data
+// Packages
+
 export default function BillCTA(params) {
     function getTableInfo(myTablesLine) {
         for (let i = 0; i < myTablesLine.length; i++) {
@@ -20,7 +26,7 @@ export default function BillCTA(params) {
                     <div></div>:
                     <div class="billCta">
                         {
-                            getTableInfo(params.tablesLine[0])=="BillPrinted"?<DisabledButton text="Print Bill"></DisabledButton>:<ActiveButton text="Print Bill" clickFunc = "displayContact" tableActive={params.tableActive} tablesLine = {params.tablesLine}  currentOrder = {params.currentOrder} bill= {params.bill} displayContact ={params.displayContact}></ActiveButton>
+                            getTableInfo(params.tablesLine[0])=="BillPrinted"?<DisabledButton text="Print Bill"></DisabledButton>:<ActiveButton text="Print Bill" clickFunc = "displayContact" tableActive={params.tableActive} tablesLine = {params.tablesLine}  currentOrder = {params.currentOrder} bill= {params.bill}  displayContact ={params.displayContact}></ActiveButton>
                         }
                         {
                             getTableInfo(params.tablesLine[0])=="BillPrinted"?<ActiveButton text="Settle Bill" clickFunc = "settleBill" screenActive = {params.screenActive} tableActive={params.tableActive} tablesLine = {params.tablesLine}  currentOrder = {params.currentOrder} bill= {params.bill} billCalc={params.billCalc}></ActiveButton>:<DisabledButton text="Settle Bill"></DisabledButton>
@@ -28,6 +34,5 @@ export default function BillCTA(params) {
                     </div>
                 }
             </div>
-        
     )
 }

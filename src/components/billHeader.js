@@ -1,3 +1,9 @@
+// Components
+// Screens
+// Pages
+// Data
+// Packages
+
 export default function BillHeader(params) {
     return(
         <div class="billHeader">

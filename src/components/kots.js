@@ -1,4 +1,8 @@
-
+// Components
+// Screens
+// Pages
+// Data
+// Packages
 
 export default function Kots(params) {
     function clickKot(makeActive) {

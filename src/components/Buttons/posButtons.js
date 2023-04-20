@@ -1,7 +1,10 @@
+// Components
 import ActiveButton from './activeButton';
 import DisabledButton from './disabledbutton';
-
-
+// Screens
+// Pages
+// Data
+// Packages
 
 export default function PosCTA(params) {
     function getTableInfo(myTablesLine) {

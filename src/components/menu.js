@@ -1,8 +1,17 @@
-import menu from "../data/menu"
-import { useState } from 'react';
+// Components
 import ActiveButton from "./Buttons/activeButton";
+// Screens
+// Pages
+// Data
+import menu from "../data/menu"
+// Packages
+import { useState } from 'react';
 
 export default function Menu(params) {
+    const [searchInput, setSearchInput] = useState("");
+    const [display, setDisplay] = useState(false);
+    const [item, setItem] = useState("");
+
     let menuList = (
         params.menuCategoryActive[0] == "All" ? menu :
         menu.filter(
@@ -11,33 +20,29 @@ export default function Menu(params) {
             )
         )
     );
-    const [searchInput, setSearchInput] = useState("");
-    const [display, setDisplay] = useState(false);
-    const [item, setItem] = useState("");
+    
     const handleChange = (e) => {
         e.preventDefault();
         setSearchInput(e.target.value);
       };
-      
+
       if (searchInput.length > 0) {
             menuList = menuList.filter((item) => (
                 item.fs_menu_itemName.toLocaleUpperCase().match(searchInput.toLocaleUpperCase())
             )
         )
       }
+
       function clickMenuItem(item) {
         setItem(item);
         setDisplay((prevDisplay) => !prevDisplay)
-        console.log(params.currentOrder[0]);
       }
     return(
         <div class="menu">
             <div class="popUpModal" style={{ zIndex: display ? 99 : -3 }}>
                 <div class="align">
                     <button id="closeButton" onClick={() => setDisplay((prevDisplay) => !prevDisplay)}>
-                    <span class="material-symbols-outlined">
-                    cancel
-                    </span>
+                        <span class="material-symbols-outlined">cancel</span>
                     </button>
                 </div>
                 <div class="itemInfoBox">

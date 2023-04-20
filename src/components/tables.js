@@ -1,7 +1,12 @@
+// Components
+// Screens
+// Pages
+// Data
 import tables from "../data/tables";
+import currentOrders from "../data/currentOrders"
+// Packages
 import { useState } from 'react';
-import currentOrders from "../data/currentOrders" 
-
+ 
 export default function Tables(params){
     function clickTable(tabNo) {
         console.log(typeof tables);
@@ -59,6 +64,7 @@ export default function Tables(params){
             setfilterActive(makeActive);
             params.tableActive[1]("");
             params.kotActive[1]("");
+            params.currentOrder[1]({});
           }
         let tableList = filterActive != "All"?params.tablesLine[0].filter((table) => (table.fs_table_tabStatus == filterActive)):params.tablesLine[0].filter((table) => (table.fs_table_tabStatus != "Empty"));
 

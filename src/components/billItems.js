@@ -1,3 +1,9 @@
+// Components
+// Screens
+// Pages
+// Data
+// Packages
+
 export default function BillItems(params) {
     return(
         <div class="billItemsDiv">

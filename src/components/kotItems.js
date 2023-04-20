@@ -1,3 +1,9 @@
+// Components
+// Screens
+// Pages
+// Data
+// Packages
+
 export default function KotItems(params) {
     return(
         <div class = "kotItemsDiv">

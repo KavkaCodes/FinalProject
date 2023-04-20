@@ -1,4 +1,9 @@
+// Components
+// Screens
+// Pages
+// Data
 import categories from "../data/categories";
+// Packages
 
 export default function menuCategories(params){
     function clickCategory(makeActive) {

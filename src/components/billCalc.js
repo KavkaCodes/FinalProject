@@ -1,3 +1,9 @@
+// Components
+// Screens
+// Pages
+// Data
+// Packages
+
 export default function BillCalc(params) {
     return(
         <div class="billCalcDiv">

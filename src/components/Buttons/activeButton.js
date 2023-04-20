@@ -1,11 +1,15 @@
-import easyinvoice from 'easyinvoice';
+// Components
+// Screens
+// Pages
+// Data
 import billInvoiceTemplate from "../../data/bill"
 import orderNoFetch from '@/data/orderNoIncrement'
 import currentOrders from '@/data/currentOrders';
 import orders from '../../data/order'
-export default function ActiveButton(params){
-    
-    
+// Packages
+import easyinvoice from 'easyinvoice';
+
+export default function ActiveButton(params){ 
     async function clickCta(clickFunc)  {
         if(clickFunc == "printBill"){
             // Generate order number
@@ -75,6 +79,11 @@ export default function ActiveButton(params){
             orders.push(myCurrentOrder);
 
             // Format order
+
+        //     "fs_currentOrder_clientName" : "",
+        //     "fs_currentOrder_clientContactNo" : "",
+        //     "fs_currentOrder_clientAddress" : "",
+        // orders[orders.length -1].fs_currentOrder_clientInfo
             orders[orders.length -1].fs_table_tableNo = params.tableActive[0]
             orders[orders.length -1].fs_orders_subTotal = params.billCalc[0]
             orders[orders.length -1].fs_orders_taxableTotal = params.billCalc[1]
