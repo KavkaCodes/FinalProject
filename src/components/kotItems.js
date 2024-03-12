@@ -15,8 +15,8 @@ export default function KotItems(params) {
                     params.kotActive[0] == "NEW" && params.newKot[0].length != 0? 
                         // console.log(params.newKot[0])   
                         params.newKot[0].map(
-                            (item)=>(
-                                <div class="menuItem">
+                            (item, index)=>(
+                                <div class="menuItem" key={index}>
                                     <div class="menuItemField">
                                         {item.fs_menu_itemName}
                                     </div>
@@ -36,8 +36,8 @@ export default function KotItems(params) {
                         params.kotActive[0] == "NEW" && params.newKot[0].length == 0 ? 
                         <div></div>
                         :params.currentOrder[0].fs_currentOrder_kots[params.kotActive[0] - 1].map(
-                        (item)=>(
-                            <div class="menuItem">
+                        (item,index)=>(
+                            <div class="menuItem" key={index}>
                                 <div class="menuItemField">
                                     {item.fs_menu_itemName}
                                 </div>

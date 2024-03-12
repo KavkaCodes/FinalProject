@@ -13,8 +13,8 @@ export default function BillItems(params) {
                             <div class="billItems">
                                 {
                                     params.bill.map(
-                                        (item)=>(
-                                            <div class="billItem">
+                                        (item, index)=>(
+                                            <div class="billItem" key={index}>
                                                 <div class="billItemField">
                                                     {item.fs_menu_itemName}
                                                 </div>

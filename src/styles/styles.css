@@ -10,7 +10,7 @@
   }
   
   .pageName{
-    margin: 0;
+    margin: 10px 0;
     color: #FFFFFF;
     font-size: 21px;
   }
@@ -284,9 +284,12 @@
     flex-direction: row;
     align-items: flex-start;
     padding: 0px;
+    color: #000000;
+    background-color: #d9d9d9;
   }
   .menuItem:nth-child(odd){
       background-color: #ECECEC;
+      
   }
   .menuItem:hover{
     background-color: #c9c9c9;
@@ -567,3 +570,5 @@
 #closeButton:hover{
   cursor: pointer;
 }
+
+

@@ -8,6 +8,8 @@ import currentOrders from "../data/currentOrders"
 import { useState } from 'react';
  
 export default function Tables(params){
+
+    const [filterActive, setfilterActive] = useState('All');
     function clickTable(tabNo) {
         console.log(typeof tables);
         params.tableActive[1](tabNo);
@@ -16,7 +18,7 @@ export default function Tables(params){
         params.newKot[1]([]);
       } 
     if(params.forScreen == "POS"){
-        const [filterActive, setfilterActive] = useState('All');
+        
         function clickFilter(makeActive) {
             setfilterActive(makeActive);
             params.tableActive[1]("");
@@ -47,8 +49,8 @@ export default function Tables(params){
                     <div class="tablesList">
                         {
                             tableList.map(
-                                (table) => (
-                                    <button onClick={()=>clickTable(table.fs_table_tableNo)} class={params.tableActive[0]==table.fs_table_tableNo ? "btnActive" :"btn"}>
+                                (table, index) => (
+                                    <button key={index} onClick={()=>clickTable(table.fs_table_tableNo)} class={params.tableActive[0]==table.fs_table_tableNo ? "btnActive" :"btn"}>
                                         <div class="table" id={table.fs_table_tabStatus}>{table.fs_table_tableNo}</div>
                                     </button>
                                     
@@ -59,7 +61,6 @@ export default function Tables(params){
             </div>
         )
     } else {
-        const [filterActive, setfilterActive] = useState('All');
         function clickFilter(makeActive) {
             setfilterActive(makeActive);
             params.tableActive[1]("");
@@ -88,8 +89,8 @@ export default function Tables(params){
                     <div class="tablesList">
                         {
                                     tableList.map(
-                                        (table) => (
-                                            <button onClick={()=>clickTable(table.fs_table_tableNo)} class={params.tableActive[0]==table.fs_table_tableNo ? "btnActive" :"btn"}>
+                                        (table,index) => (
+                                            <button key={index} onClick={()=>clickTable(table.fs_table_tableNo)} class={params.tableActive[0]==table.fs_table_tableNo ? "btnActive" :"btn"}>
                                                 <div class="table" id={table.fs_table_tabStatus}>{table.fs_table_tableNo}</div>
                                             </button>
                                     

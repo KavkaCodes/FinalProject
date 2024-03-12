@@ -34,8 +34,8 @@ export default function Kots(params) {
             {
                 isObjectEmpty(params.currentOrder[0])
                 ?<div></div>:params.currentOrder[0].fs_currentOrder_kots.map(
-                    (kot) => (
-                        <button onClick= {
+                    (kot,index) => (
+                        <button key={index} onClick= {
                             ()=>clickKot(params.currentOrder[0].fs_currentOrder_kots.indexOf(kot) + 1)
                         } class = {
                             params.kotActive[0]==params.currentOrder[0].fs_currentOrder_kots.indexOf(kot) + 1?

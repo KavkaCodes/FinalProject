@@ -78,8 +78,8 @@ export default function Menu(params) {
                 <div class="menuItems">
                     {
                         menuList.map(
-                            (item) => ( 
-                                <button class="menuItem" id={params.kotActive[0] == "NEW"?"menuItemAllowed":"menuItemNotAllowed"} onClick={params.kotActive[0] == "NEW"?()=>clickMenuItem(item):void(0)} onDoubleClick={params.kotActive[0] == "NEW"?()=>clickMenuItem(item):void(0)}>
+                            (item, index) => ( 
+                                <button key={index} class="menuItem" id={params.kotActive[0] == "NEW"?"menuItemAllowed":"menuItemNotAllowed"} onClick={params.kotActive[0] == "NEW"?()=>clickMenuItem(item):void(0)} onDoubleClick={params.kotActive[0] == "NEW"?()=>clickMenuItem(item):void(0)}>
                                     <div class="menuItemField">
                                         {item.fs_menu_itemName}
                                     </div>

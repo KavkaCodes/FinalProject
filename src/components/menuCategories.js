@@ -17,8 +17,8 @@ export default function menuCategories(params){
             </button>
             {
                 categories.map(
-                    (category) => (
-                        <button onClick= {()=>clickCategory(category)} class={params.menuCategoryActive[0]==category ? "btnActive categoryBtn" :"btn categoryBtn"}>
+                    (category,index) => (
+                        <button key={index} onClick= {()=>clickCategory(category)} class={params.menuCategoryActive[0]==category ? "btnActive categoryBtn" :"btn categoryBtn"}>
                             <div class="category">{category}</div>
                         </button>
                     )
